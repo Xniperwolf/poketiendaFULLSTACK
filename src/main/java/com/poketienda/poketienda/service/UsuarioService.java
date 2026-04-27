@@ -16,6 +16,7 @@ public class UsuarioService {
 
     //Obtener todos los usuarios
     public List<Usuario> getUsuarios1() {
+        // Método auxiliar para obtener todos los usuarios sin filtro
         return usuarioRepository.findAll();
     }
 
