@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.poketienda.poketienda.model.Usuario;
 import com.poketienda.poketienda.service.UsuarioService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/v1/usuarios")
@@ -20,8 +22,8 @@ public class UsuarioController {
     public List<Usuario> listarUsuarios(){
         return usuarioService.getUsuarios();
     }
-    
 
-
-
-}
+    @PostMapping
+    public Usuario crearUsuario(@RequestBody Usuario usuario){
+        return usuarioService.saveUsuario(usuario);
+    }
